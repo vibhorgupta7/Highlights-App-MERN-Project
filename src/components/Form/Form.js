@@ -13,7 +13,7 @@ const Form = () => {
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
-        e.preventDefault()              // not to get refrsh in the brower
+        e.preventDefault()                       // not to get refrsh in the brower
     
         dispatch(createPost(postData));        // dispatching action when submit button is clicked, sending all information user has entered in the form
     }
@@ -29,11 +29,10 @@ const Form = () => {
                 <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })} />
                 <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
                 <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
-                <TextField name="tags" variant="outlined" label="Creator" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value })} />
-                <div className={classes.fileInput}>
-                    <FileBase type="file" multiple="false" onDone={(base64)=> setPostData({ ...postData, selectedFile:base64})}
-                    />
-                </div>
+                <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value })} />
+                
+                <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div>
+               
                 <Button className={classes.buttonSubmit} variant="contained" size="large" color="primary" type="submit" fullWidth>Submit</Button>
                 
                 <Button className={classes.buttonClear}variant="contained" size="large" color="secondary" onClick={clear} fullWidth>Clear</Button>
