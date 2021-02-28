@@ -2,6 +2,9 @@
 export default (posts=[],action) => {
     
     switch(action.type){
+        case 'UPDATE':
+            return posts.map((post) => post._id === action.payload._id ? action.payload : post);
+            // It will iterate over all posts and when id match return the updated post
         case 'FETCH_ALL':
             return action.payload;
         case 'CREATE':
