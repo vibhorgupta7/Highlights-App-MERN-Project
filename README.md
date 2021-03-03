@@ -4,12 +4,12 @@
 ![screencapture-localhost-3000-2021-03-01-23_35_48](https://user-images.githubusercontent.com/68294925/109829102-3eac0700-7c63-11eb-9a88-041fc91c9fb9.png)
 
 
-* A Chatting App with functionalities like:
-   * Create multiple chat rooms
+* A Highlights App with functionalities like:
+   * Create multiple posts
    * Image Support 
-   * Online Status
-   * sound notifictaion
-   * icons telling you who has seen the message
-* User will login from a Login-Form.
-* Technology Used: React, React API, React Hooks, Axios, CSS.
+   * Update button to update posts
+   * Like button to like posts
+   * Delete button to delete button
+* The data is being created, updated and deleted in MongoDb database. 
+* Technology Used: Node Js, React Js, Express Js, Express Js
 
